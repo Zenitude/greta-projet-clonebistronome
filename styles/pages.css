@@ -126,6 +126,8 @@ footer a
 {
     color: var(--thirdColor);
     text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 5px;
 
 }
 
