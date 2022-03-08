@@ -18,6 +18,7 @@ catch (Exception $e)
     <link rel="icon" type="image/png" href="../ressources/logo.png" />
     <script src="https://kit.fontawesome.com/10a6ffe905.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/pages.css">
     <link rel="stylesheet" href="../styles/indexParis.css">
     <title>Paris | Bustronome | Restaurant grastronomique original à Paris & ... </title>
 </head>
