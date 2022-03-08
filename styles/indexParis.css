@@ -11,27 +11,81 @@
     grid-area: 1 / 1 / 2 / 2;
     width: 100%;
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 350px 1fr;
     grid-template-rows: 1fr 5px;
+    position: relative;
 }
 
-#sideBar
+.sidebar
 {
     grid-area: 1 / 1 / 2 / 2;
     background-color: var(--darktheme);
-
-    padding-top: 5px;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
 }
 
-#sideBar ul, #sideBar ul li, #sideBar ul a
+#logo
 {
     width: 100%;
+    text-align: center;
+    display: block;
+    padding-bottom: 30px;
 }
 
-#sideBar a
+.sidebar nav li
+{
+    width: 100%;
+    list-style-type: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+}
+
+.sidebar nav a
 {
     text-decoration: none;
     color: var(--secondColor);
+}
+
+.sidebar nav li:not(.sidebar nav li:last-of-type)
+{
+    border-bottom: 1px solid rgb(61, 60, 60);
+}
+
+.geoloc
+{
+    margin-top: auto;
+    text-align: center;
+}
+
+.geoloc p
+{
+    text-align: center;
+}
+
+.geoloc p a
+{
+    color: var(--thirdColor);
+}
+
+select
+{
+    background: transparent;
+    color: var(--thirdColor);
+    width: 150px;
+    height: 50px;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    padding-left: 5px;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
+
+form
+{
+    background: transparent;
 }
 
 .barDefil
@@ -58,6 +112,7 @@ footer
     align-self: center;
     justify-self: start;
     padding-left: 30px;
+    display: flex;
 }
 
 footer .barreDefil
@@ -72,4 +127,22 @@ footer a
     color: var(--thirdColor);
     text-decoration: none;
 
+}
+
+.copyMadeIn
+{
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--bluedark);
+    margin-right: 15px;
+}
+
+.copyMadeIn p:last-of-type
+{
+    color: var(--secondColor);
+}
+
+.copyMadeIn span
+{
+    color: var(--thirdColor);
 }

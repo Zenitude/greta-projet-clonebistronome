@@ -3,7 +3,8 @@
     --mainColor: #000;
     --secondColor: #fff;
     --thirdColor: rgb(142,144,114);
-    --darktheme: #333;
+    --darktheme: rgb(26, 26, 26);
+    --bluedark: rgb(102,118,156);
 }
 
 *, ::before, ::after
@@ -19,6 +20,20 @@ body
     color: var(--secondColor);
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
+}
+
+i
+{
+    color: var(--thirdColor);
+    margin: 0px 5px;
+}
+
+#fb, #gg, #insta
+{
+    color: var(--secondColor);
+    border: 1px solid white;
+    padding: 5px 7px;
+    border-radius: 50%;
 }
 
 footer button
