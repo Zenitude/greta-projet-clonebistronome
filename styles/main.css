@@ -1,0 +1,40 @@
+:root
+{
+    --mainColor: #000;
+    --secondColor: #fff;
+    --thirdColor: rgb(142,144,114);
+    --darktheme: #333;
+}
+
+*, ::before, ::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background: var(--mainColor);
+    color: var(--secondColor);
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+footer button
+{
+    background: var(--mainColor);
+    border: none;
+    color: var(--thirdColor);
+    font-weight: bold;
+}
+
+footer button:hover
+{
+    text-decoration: underline;
+}
+
+footer button:first-of-type
+{
+    color: grey;
+}

@@ -1,0 +1,75 @@
+.container
+{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 80px;
+}
+
+.slider
+{
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr 5px;
+}
+
+#sideBar
+{
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: var(--darktheme);
+
+    padding-top: 5px;
+}
+
+#sideBar ul, #sideBar ul li, #sideBar ul a
+{
+    width: 100%;
+}
+
+#sideBar a
+{
+    text-decoration: none;
+    color: var(--secondColor);
+}
+
+.barDefil
+{
+    grid-area: 2 / 1 / 3 / 3;
+    width: 0%; 
+    height: 5px;
+    background-color: var(--thirdColor);
+    animation: defilBar 5s infinite linear;
+}
+
+@keyframes defilBar
+{
+    to 
+    {
+        width: 100%;
+    }
+}
+
+footer
+{
+    grid-area: 2 / 1 / 3 / 2;
+    width: 100%;
+    align-self: center;
+    justify-self: start;
+    padding-left: 30px;
+}
+
+footer .barreDefil
+{
+    width: 0%;
+    height: 3px;
+    background-color: var(--thirdColor);
+}
+
+footer a
+{
+    color: var(--thirdColor);
+    text-decoration: none;
+
+}
