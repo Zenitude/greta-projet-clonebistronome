@@ -41,7 +41,7 @@ catch (Exception $e)
                         <li><a href="">Contactez le bustronome Paris</a></li>
                     </ul>
                 </nav>
-                <p class="geoloc">
+                <p class="location">
                     <img src="" alt="">
                     <p>Arc de triomphe</p>
                     <a href="https://www.google.com/maps/place/Bustronome+-+Paris/@48.872752,2.294031,15z/data=!4m5!3m4!1s0x0:0x2b80095c2d0654ca!8m2!3d48.872752!4d2.294031">angle avenue Kleber</a>
