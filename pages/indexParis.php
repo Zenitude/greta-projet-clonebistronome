@@ -25,6 +25,7 @@ catch (Exception $e)
 <body>
     <div class="container">
         <div class="slider">
+            <div class="slide"></div>
             <div class="sidebar">
                 <nav>
                     <a href="../index.php" id="logo"><img src="../ressources/logo.png" alt="lien vers accueil"></a>
@@ -53,9 +54,10 @@ catch (Exception $e)
                     <option value="londres">Londres</option>
                 </select>
             </form>
-            <div class="barDefil"></div>
+            
         </div>
         <footer>
+        <div class="barDefil"></div>
             <div class="contactReseaux">
                 <button>FR</button> | <button>EN</button> 
                 <i class="fa-solid fa-phone"></i> <span class="tel">+33 (0) 954 444 555</span>
@@ -70,6 +72,7 @@ catch (Exception $e)
             </div>
          </footer>
     </div>
+    <script src="../script/app.js"></script>
     
 </body>
 </html>
