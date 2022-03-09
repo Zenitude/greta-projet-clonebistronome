@@ -40,6 +40,37 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 40px;
+    position: relative;
+    z-index: 0;
+}
+
+.fa-star-half-stroke
+{
+    color: var(--secondColor);
+}
+
+.sidebar nav li::before
+{
+    content: '';
+    width: 0%;
+    height: 100%;
+    background-color: var(--hovercolor);
+    position: absolute;
+    left: 0;
+    transition: width 1s ease-in-out;
+    z-index: 1;
+}
+
+.sidebar nav li:hover::before
+{
+    width: 100%;
+
+}
+
+.sidebar nav li:hover a
+{
+    color: var(--thirdColor);
+    z-index: 50;
 }
 
 .sidebar nav a
@@ -55,19 +86,31 @@
 
 .sidebar .location
 {
-    margin-top: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    margin: auto auto 0;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: repeat(2, 25px);
+}
+
+.location i
+{
+    grid-area: 1 / 1 / 3 / 2;
+    text-align: center;
+    width: 50px;
+    height: 50px;
 }
 
 .sidebar .location p
 {
-    margin: 0 auto;
+    grid-area: 1 / 2 / 2 / 3;
+
 }
 
 .sidebar .location a
 {
+    grid-area: 2 / 2 / 3 / 3;
+    justify-self: start;
     color: var(--thirdColor);
 }
 
