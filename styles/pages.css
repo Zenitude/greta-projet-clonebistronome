@@ -4,7 +4,6 @@
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 80px;
-    z-index: 2;
 }
 
 .slider
@@ -26,6 +25,11 @@
     bottom: 0;
 }
 
+.slide img
+{
+    transition: opacity 0.5s ease-in-out;
+}
+
 .sidebar
 {
     grid-area: 1 / 1 / 2 / 2;
@@ -45,21 +49,41 @@
 
 .sidebar nav li
 {
-    width: 100%;
     list-style-type: none;
     text-transform: uppercase;
     text-align: center;
     line-height: 40px;
     position: relative;
-    background-size: 0%;
-    transition: background 0.5s ease-in-out;
+    z-index: 0;
 }
 
-.sidebar nav li:hover
+.navBar li a::before
 {
+    content: '';
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color: var(--hovercolor);
-    background-size: 100%;
-    
+    z-index: -1;
+}
+
+.navBar li:hover a::before
+{
+    animation: overlay 0.5s linear forwards;
+}
+
+@keyframes overlay
+{
+    form
+    {
+        width: 0%;
+    }
+    to
+    {
+        width: 100%;
+    }
 }
 
 .fa-star-half-stroke
@@ -67,41 +91,21 @@
     color: var(--secondColor);
 }
 
-/*.sidebar nav li::after
-{
-    content: '';
-    width: 0%;
-    height: 100%;
-    background-color: var(--hovercolor);
-    position: absolute;
-    left: 0;
-    transition: right 0.5s ease-in-out;
-    z-index: 1;
-    right: 100%;
-}*/
-
-/*.sidebar nav li:hover::after
+.navBar ul li a
 {
     width: 100%;
-    right: 0%;
-    transform: translateZ(-10px);
-}*/
-
-.sidebar nav li:hover a
-{
-    color: var(--thirdColor);
-    transform: translateY(200px);
-}
-
-.sidebar nav a
-{
     text-decoration: none;
     color: var(--secondColor);
-    z-index: 50;
-    transition: transform 0.5s ease-in;
+    z-index: 1;
 }
 
-.sidebar nav li:not(.sidebar nav li:last-of-type)
+.navBar ul li:hover a, .navBar ul li:hover i
+{
+    color: var(--thirdColor);
+}
+
+
+.navBar li:not(.navBar li:last-of-type)
 {
     border-bottom: 1px solid rgb(61, 60, 60);
 }

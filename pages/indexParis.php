@@ -27,7 +27,7 @@ catch (Exception $e)
         <div class="slider">
             <div class="slide"></div>
             <div class="sidebar">
-                <nav>
+                <nav class="navBar">
                     <a href="../index.php" id="logo"><img src="../ressources/logo.png" alt="lien vers accueil"></a>
                     <ul>
                         <li><a href="">Réservez Maintenant</a></li>
@@ -72,6 +72,7 @@ catch (Exception $e)
             </div>
          </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="../script/app.js"></script>
     
 </body>
