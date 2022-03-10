@@ -1,3 +1,5 @@
+/* Container principale */
+
 .container
 {
     width: 100%;
@@ -5,6 +7,52 @@
     display: grid;
     grid-template-rows: 1fr 80px;
 }
+
+/* Messages */
+
+.msgAccueil
+{
+    position: absolute;
+    top: 100px;
+    left : 400px;
+    font-size: 2rem;
+    filter: drop-shadow(0px 0px 1px #000);
+
+}
+
+.msgDescription
+{
+    position: absolute;
+    background-color: var(--mainColor);
+    left: 400px;
+    bottom: 20px;
+    width: 650px;
+    height: 275px;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+}
+
+.msgDescription h3
+{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.msgDescription p
+{
+    margin-top: 20px;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.msgDescription p span
+{
+    color: var(--thirdColor);
+}
+
+/* Slider */
 
 .slider
 {
@@ -29,6 +77,9 @@
 {
     transition: opacity 0.5s ease-in-out;
 }
+
+
+/* SideBar */
 
 .sidebar
 {
@@ -57,7 +108,7 @@
     z-index: 0;
 }
 
-.navBar li a::before
+.navBar li:not(.navBar li:first-of-type) a::before
 {
     content: '';
     width: 0%;
@@ -69,9 +120,24 @@
     z-index: -1;
 }
 
+.navBar li:first-of-type
+{
+    background-color: var(--thirdColor);
+}
+
+.navBar li:first-of-type a
+{
+    color: var(--mainColor);
+}
+
 .navBar li:hover a::before
 {
     animation: overlay 0.5s linear forwards;
+}
+
+.navBar li:first-of-type:hover a
+{
+    color:#000;
 }
 
 @keyframes overlay
@@ -84,26 +150,6 @@
     {
         width: 100%;
     }
-}
-
-.msgAccueil
-{
-    position: absolute;
-    top: 100px;
-    left : 400px;
-    font-size: 2rem;
-    filter: drop-shadow(0px 0px 1px #000);
-
-}
-
-.imgSlideHidden
-{
-    opacity: 0;
-}
-
-.imgSlideOp
-{
-    opacity: 1;
 }
 
 .fa-star-half-stroke
@@ -160,6 +206,13 @@
     color: var(--thirdColor);
 }
 
+/* Select City */
+
+form
+{
+    background: transparent;
+}
+
 select
 {
     background: transparent;
@@ -174,10 +227,7 @@ select
     top: 50px;
 }
 
-form
-{
-    background: transparent;
-}
+/* Barre progression */
 
 .barDefil
 {
@@ -195,6 +245,8 @@ form
         width: 100%;
     }
 }
+
+/* Footer */
 
 footer
 {
