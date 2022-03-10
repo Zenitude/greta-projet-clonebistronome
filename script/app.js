@@ -34,21 +34,22 @@ for (let i = 0; i < 5; i++) {
     tabImg.push(imgSlide);
     slide.appendChild(imgSlide);
 }
-console.log(tabImg);
-for (let i = 0; i < tabImg.length; i++) {
+function slideAction() {
+    let sec = 0;
+    let img = 0;
     setInterval(() => {
-        tabImg[i].style.opacity = '0';
-    }, (i + 1) * 1000);
-    setInterval(() => {
-        tabImg[i].style.opacity = '1';
-    }, (i + 1) * 1500);
+        sec++;
+        if (sec > 4) {
+            tabImg[img].style.opacity = '0';
+            img++;
+            sec = 0;
+            if (img > 4) {
+                img = 0;
+            }
+            tabImg[img].style.opacity = '1';
+        }
+    }, 1000);
 }
-/*tabImg.foreach((img : HTMLImageElement) =>
-{
-   
-    setInterval(() =>
-    {
-        return img.style.opacity = '1';
-    },5000);
-
-});*/
+window.addEventListener('load', () => {
+    slideAction();
+});

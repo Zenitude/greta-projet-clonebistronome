@@ -86,6 +86,16 @@
     }
 }
 
+.imgSlideHidden
+{
+    opacity: 0;
+}
+
+.imgSlideOp
+{
+    opacity: 1;
+}
+
 .fa-star-half-stroke
 {
     color: var(--secondColor);
