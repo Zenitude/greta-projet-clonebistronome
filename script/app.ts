@@ -16,11 +16,11 @@ class ImageSlide {
     }
 }
 
-const img1 = new ImageSlide('../ressources/plat1.jpg', 'brochette de légumes');
-const img2 = new ImageSlide('../ressources/plat2.jpg', 'agneau');
-const img3 = new ImageSlide('../ressources/plat3.jpg', 'burger');
-const img4 = new ImageSlide('../ressources/plat4.jpg', 'gambass');
-const img5 = new ImageSlide('../ressources/plat5.jpg', 'poisson');
+const img1 = new ImageSlide('../ressources/slider/plat1.jpg', 'brochette de légumes');
+const img2 = new ImageSlide('../ressources/slider/plat2.jpg', 'agneau');
+const img3 = new ImageSlide('../ressources/slider/plat3.jpg', 'burger');
+const img4 = new ImageSlide('../ressources/slider/plat4.jpg', 'gambass');
+const img5 = new ImageSlide('../ressources/slider/plat5.jpg', 'poisson');
 
 tab.push(img1);
 tab.push(img2);

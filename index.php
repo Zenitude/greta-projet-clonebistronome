@@ -1,11 +1,11 @@
-<?php  $nomDeLaPage = basename(__FILE__); include_once('../widgets/doctypeHead.php'); ?>
+<?php  $nomDeLaPage = basename(__FILE__); include_once('widgets/doctypeHead.php'); ?>
 
     <div class="container">
         <header><a href="index.php"><img src="ressources/logo.png" alt=""></a></header>
         <div class="main">
             <div class="tourEiffel">
                 <a href="pages/indexParis.php">
-                    <img src="ressources/tour-eiffel.png" alt="lien vers paris">
+                    <img src="ressources/accueil/tour-eiffel.png" alt="lien vers paris">
                 </a>
                 <a href="pages/indexParis.php">VOYAGE GOURMAND <span>PARIS</span></a>
             </div>
@@ -19,13 +19,13 @@
             </div>
             <div class="bigBen">
             <a href="pages/indexLondres.php">
-                <img src="ressources/big-ben.png" alt="lien vers londres">
+                <img src="ressources/accueil/big-ben.png" alt="lien vers londres">
             </a>
             <a href="pages/indexLondres.php">VOYAGE GOURMAND <span>LONDRES</span></a>
             </div>
         </div>
 
-        <?php include_once('../widgets/footer.php'); ?>
+        <?php include_once('widgets/footer.php'); ?>
     </div>
     
-    <?php include_once('../widgets/scripts.php'); ?>
+    <?php include_once('widgets/scripts.php'); ?>
