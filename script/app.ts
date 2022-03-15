@@ -1,3 +1,35 @@
+window.addEventListener('load', () => { window.onload;})
+
+// Menu Hamburger
+const menuH = document.querySelector('.menuH') as HTMLDivElement;
+const liste = document.querySelector('.sidebar ul') as HTMLUListElement;
+
+const divMenu = document.createElement('div') as HTMLDivElement;
+divMenu.style.width = '100%';
+divMenu.style.height = '100%';
+divMenu.style.position = 'relative';
+divMenu.style.display = 'flex';
+divMenu.style.justifyContent = 'center';
+divMenu.style.alignItems = 'center';
+menuH.appendChild(divMenu);
+
+let tabLigne : any = [];
+for(let i = 0 ; i < 3 ; i++)
+{
+    const ligneMenu = document.createElement('div') as HTMLDivElement;
+    ligneMenu.style.width = '60px';
+    ligneMenu.style.height = '6px';
+    ligneMenu.style.background = 'rgb(142,144,114)';
+    ligneMenu.style.borderRadius = '5px';
+    ligneMenu.style.position = 'absolute';
+    divMenu.appendChild(ligneMenu);
+}
+
+menuH.addEventListener('click', () => 
+{
+    liste.classList.toggle('active');
+});
+
 // Message Description
 const msgDescription = document.querySelector('.msgDescription') as HTMLDivElement;
 const msgDescTitre = document.querySelector('.msgDescription h3') as HTMLHeadingElement;
@@ -56,11 +88,14 @@ tab.push(img4);
 
 for(let i = 0 ; i < 4 ; i++)
 {
-    const imgSlide = document.createElement('img') as HTMLImageElement;
-    imgSlide.setAttribute('src', `${tab[i]['src']}`);
-    imgSlide.setAttribute('alt', `${tab[i]['alt']}`);
+    const imgSlide = document.createElement('div') as HTMLImageElement;
+    imgSlide.style.backgroundImage = `url(${tab[i]['src']})`;
+    imgSlide.style.backgroundRepeat = 'no-repeat';
+    imgSlide.style.backgroundSize = 'cover';
+    imgSlide.style.backgroundPosition = 'center';
     imgSlide.style.position = 'absolute';
     imgSlide.style.width = '100%';
+    imgSlide.style.height = '100%';
     imgSlide.style.top = '0';
     imgSlide.style.right = '0';
     imgSlide.style.bottom = '0';

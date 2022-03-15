@@ -5,79 +5,9 @@
     width: 100%;
     height: 100%;
     display: grid;
+    grid-template-columns: 350px 1fr;
     grid-template-rows: 1fr 80px;
 }
-
-/* Messages */
-
-.msgAccueil
-{
-    position: absolute;
-    top: 100px;
-    left : 400px;
-    font-size: 2rem;
-    filter: drop-shadow(0px 0px 1px #000);
-
-}
-
-.msgDescription
-{
-    position: absolute;
-    background-color: var(--mainColor);
-    left: 400px;
-    bottom: 20px;
-    width: 650px;
-    height: 275px;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-
-}
-
-.msgDescription h3
-{
-    text-transform: uppercase;
-    font-size: 2.5rem;
-}
-
-.msgDescription p
-{
-    margin-top: 20px;
-    font-size: 1.5rem;
-    text-align: justify;
-}
-
-.msgDescription p span
-{
-    color: var(--thirdColor);
-}
-
-/* Slider */
-
-.slider
-{
-    grid-area: 1 / 1 / 2 / 2;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    position: relative;
-    overflow: hidden;
-}
-
-.slide
-{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
-
-.slide img
-{
-    transition: opacity 0.5s ease-in-out;
-}
-
 
 /* SideBar */
 
@@ -170,7 +100,6 @@
     color: var(--thirdColor);
 }
 
-
 .navBar li:not(.navBar li:last-of-type)
 {
     border-bottom: 1px solid rgb(61, 60, 60);
@@ -206,11 +135,92 @@
     color: var(--thirdColor);
 }
 
+/* Messages */
+
+.msgAccueil
+{
+    position: absolute;
+    top: 100px;
+    left : 50px;
+    font-size: 2rem;
+    filter: drop-shadow(0px 0px 1px #000);
+
+}
+
+.msgDescription
+{
+    position: absolute;
+    background-color: var(--mainColor);
+    left: 50px;
+    bottom: 20px;
+    width: 650px;
+    height: 275px;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+}
+
+.msgDescription h3
+{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.msgDescription p
+{
+    margin-top: 20px;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.msgDescription p span
+{
+    color: var(--thirdColor);
+}
+
+/* Slider */
+
+.slider
+{
+    grid-area: 1 / 2 / 2 / 3;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.slide img
+{
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
 /* Select City */
 
 form
 {
     background: transparent;
+}
+
+#seleccity
+{
+    background-image: url("../ressources/ic-select.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    z-index: 10;
 }
 
 select
@@ -225,13 +235,16 @@ select
     position: absolute;
     right: 50px;
     top: 50px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
 
 /* Barre progression */
 
 .barDefil
 {
-    grid-area: 2 / 1 / 3 / 3;
+    
     width: 0%; 
     height: 5px;
     background-color: var(--thirdColor);
@@ -250,15 +263,17 @@ select
 
 footer
 {
-    grid-area: 2 / 1 / 3 / 2;
+    grid-area: 2 / 1 / 3 / 3;
     width: 100%;
     height: 80px;
     align-self: center;
     justify-self: start;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     background-color: var(--mainColor);
     position: relative;
+    font-size: 1.1em;
 }
 
 footer .barDefil
@@ -268,6 +283,25 @@ footer .barDefil
     width: 0%;
     height: 3px;
     background-color: var(--thirdColor);
+}
+
+footer button
+{
+    font-size: 2.4vmin;
+    margin: 0 5px;
+}
+
+footer .contactReseaux
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.contactReseaux i
+{
+    margin: 0 5px;
 }
 
 footer button:first-of-type
@@ -301,3 +335,178 @@ footer a
 {
     color: var(--thirdColor);
 }
+
+@media screen and (max-width: 1090px)
+{
+    body 
+    {
+        background: #333;
+    }
+
+    footer
+    {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 5px 1fr;
+    }
+
+    .barDefil
+    {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .contactReseaux
+    {
+        grid-area: 2 / 1 / 3 / 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .copyMadeIn
+    {
+        text-align: center;
+        grid-area: 3 / 1 / 4 / 2;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px)
+{
+    body 
+    {
+        height: auto;
+    }
+
+    .container
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 355px 700px 155px;
+    }
+
+    /* Sidebar */
+    .sidebar
+    {
+        position: relative;
+        grid-area: 1 / 1 / 2 / 2; 
+    }
+
+    .sidebar img 
+    {
+        width: 250px;
+    }
+
+    .sidebar ul
+    {
+        display: none;
+    }
+
+    .sidebar ul.active
+    {
+        display: block;
+        position: absolute;
+        background-color: #000;
+        top: 355px;
+        left: 10px;
+        width: 280px;
+        font-size: 0.8em;
+    }
+
+    .sidebar .location
+    {
+        width: 250px;
+        margin: 0 auto;
+    }
+
+    /* Menu Hamburger */
+
+    .menuH
+    {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuH div div:nth-child(1)
+    {
+        top: 10px;
+    }
+
+    .menuH div div:nth-child(2)
+    {
+        top: 30px;
+    }
+
+    .menuH div div:nth-child(3)
+    {
+        top: 50px;
+    }  
+
+    /* Slider */
+
+    .slider
+    {
+        grid-area: 2 / 1 / 3 / 2;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px 200px 100px;
+    }
+
+    .slider form 
+    {
+        display: none;
+    }
+
+    .slide 
+    {
+        grid-area: 1 / 1 / 2 / 2 ;
+    }
+
+    .slide img 
+    {
+        background-position: center ;
+    }
+
+    /* Messages */
+    .msgDescription 
+    {
+        position: initial;
+        width: 100%;
+        height: 100%;
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .msgDescription h3 
+    {
+        font-size: 2.5vmax;
+    }
+
+    .msgDescription p 
+    {
+        font-size: 1.8vmax;
+    }
+
+    .msgAccueil 
+    {
+        position: initial;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        font-size: 2.5vmax;
+        grid-area: 3 / 1 / 4 / 2;
+        background: #1a1a1a;
+    }
+
+    /* Footer */
+    footer 
+    {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+}
+

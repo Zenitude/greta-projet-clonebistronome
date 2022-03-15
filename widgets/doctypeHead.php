@@ -14,6 +14,7 @@
         <title>Bustronome | Restaurant grastronomique original à Paris & ... </title>
     <? else: ?>
         <link rel="stylesheet" href="../styles/pages.css">
+        <link rel="stylesheet" href="../styles/mediaqueries.css">
         <title>Paris | Bustronome | Restaurant grastronomique original à Paris & ... </title>
     <?php endif; ?>
     <link rel="stylesheet" href="../styles/mediaqueries.css">

@@ -1,4 +1,29 @@
 "use strict";
+window.addEventListener('load', () => { window.onload; });
+// Menu Hamburger
+const menuH = document.querySelector('.menuH');
+const liste = document.querySelector('.sidebar ul');
+const divMenu = document.createElement('div');
+divMenu.style.width = '100%';
+divMenu.style.height = '100%';
+divMenu.style.position = 'relative';
+divMenu.style.display = 'flex';
+divMenu.style.justifyContent = 'center';
+divMenu.style.alignItems = 'center';
+menuH.appendChild(divMenu);
+let tabLigne = [];
+for (let i = 0; i < 3; i++) {
+    const ligneMenu = document.createElement('div');
+    ligneMenu.style.width = '60px';
+    ligneMenu.style.height = '6px';
+    ligneMenu.style.background = 'rgb(142,144,114)';
+    ligneMenu.style.borderRadius = '5px';
+    ligneMenu.style.position = 'absolute';
+    divMenu.appendChild(ligneMenu);
+}
+menuH.addEventListener('click', () => {
+    liste.classList.toggle('active');
+});
 // Message Description
 const msgDescription = document.querySelector('.msgDescription');
 const msgDescTitre = document.querySelector('.msgDescription h3');
@@ -40,11 +65,14 @@ tab.push(img2);
 tab.push(img3);
 tab.push(img4);
 for (let i = 0; i < 4; i++) {
-    const imgSlide = document.createElement('img');
-    imgSlide.setAttribute('src', `${tab[i]['src']}`);
-    imgSlide.setAttribute('alt', `${tab[i]['alt']}`);
+    const imgSlide = document.createElement('div');
+    imgSlide.style.backgroundImage = `url(${tab[i]['src']})`;
+    imgSlide.style.backgroundRepeat = 'no-repeat';
+    imgSlide.style.backgroundSize = 'cover';
+    imgSlide.style.backgroundPosition = 'center';
     imgSlide.style.position = 'absolute';
     imgSlide.style.width = '100%';
+    imgSlide.style.height = '100%';
     imgSlide.style.top = '0';
     imgSlide.style.right = '0';
     imgSlide.style.bottom = '0';
