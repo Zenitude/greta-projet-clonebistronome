@@ -2,7 +2,7 @@
     <nav class="navBar">
         <a href="../../index.php" id="logo"><img src="../ressources/logo.png" alt="lien vers accueil"></a>
         <ul>
-            <li><a href="">Réservez Maintenant</a></li>
+            <li><a href="../pages/reservation-date-heure.php">Réservez Maintenant</a></li>
             <li><a href=""><i class="fa-solid fa-star-half-stroke"></i> Carte Cadeau <i class="fa-solid fa-star-half-stroke"></i></a></li>
             <li><a href="">Les offres</a></li>
             <li><a href="">Le concept</a></li>

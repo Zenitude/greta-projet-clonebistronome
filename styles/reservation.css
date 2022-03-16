@@ -1,0 +1,96 @@
+.sidebar
+{
+    width: 500px;
+}
+
+.reservation
+{
+    width: 85%;
+    height: 550px;
+    background: var(--darktheme);
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.contenuOnglet
+{
+    padding: 20px 0 20px 30px;
+}
+
+/* Onglets */
+.reservation ul
+{
+    display: flex;
+    border-bottom: 1px solid rgba(124, 122, 122, 0.2);
+}
+
+ul li 
+{
+    list-style-type: none;
+    line-height: 45px;
+    padding: 0 15px;
+}
+
+i
+{
+    color: var(--secondColor);
+}
+
+.activeReservation
+{
+    background-color: var(--thirdColor);
+}
+
+.downReservation
+{
+    background-color: var(--hovercolor);
+}
+
+/* Date et Heure */
+
+.horaires
+{
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+
+.horaires thead
+{
+    border-bottom: 1px solid var(--thirdColor);
+}
+
+.horaires td,.horaires th
+{
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+.horaires tbody tr:nth-child(3)
+{
+    border-bottom: 1px solid var(--thirdColor);
+}
+
+.horaires thead th:nth-child(3), .horaires thead th:nth-child(2)
+{
+    border-right: 1px solid var(--thirdColor);
+    border-left: 1px solid var(--thirdColor);
+}
+
+.horaires tbody tr td:nth-child(1)
+{
+    border-right: 1px solid var(--thirdColor);
+}
+
+.horaires tbody tr td:last-of-type, .middle
+{
+    border-left: 1px solid var(--thirdColor);
+}
+
+.horaires a
+{
+    color: var(--thirdColor);
+}
+

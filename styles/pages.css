@@ -135,6 +135,11 @@
     color: var(--thirdColor);
 }
 
+.menuH
+{
+    display: none;
+}
+
 /* Messages */
 
 .msgAccueil
@@ -214,7 +219,7 @@ form
     background: transparent;
 }
 
-#seleccity
+#selectCity
 {
     background-image: url("../ressources/ic-select.png");
     background-repeat: no-repeat;

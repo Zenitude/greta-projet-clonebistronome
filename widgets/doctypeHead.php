@@ -12,9 +12,13 @@
     <? if($nomDeLaPage == 'index.php'): ?>
         <link rel="stylesheet" href="../styles/index.css">
         <title>Bustronome | Restaurant grastronomique original à Paris & ... </title>
+    <? elseif ($nomDeLaPage == 'indexParis.php'): ?>
+        <link rel="stylesheet" href="../styles/pages.css">
+        <title>Paris | Bustronome | Restaurant grastronomique original à Paris & ... </title>
     <? else: ?>
         <link rel="stylesheet" href="../styles/pages.css">
-        <link rel="stylesheet" href="../styles/mediaqueries.css">
+        <link rel="stylesheet" href="../styles/reservation.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
         <title>Paris | Bustronome | Restaurant grastronomique original à Paris & ... </title>
     <?php endif; ?>
     <link rel="stylesheet" href="../styles/mediaqueries.css">
