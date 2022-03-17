@@ -61,7 +61,7 @@ tabMsg.push(msg3);
 tabMsg.push(msg4);
 
 // Slider
-const slide = document.querySelector('div.slide') as Element;
+const slide = document.querySelector('div.slide') as HTMLDivElement;
 let tab = [] as any;
 let tabImg = [] as any;
 
@@ -147,3 +147,212 @@ window.addEventListener('load', () =>
 {
     slideImg();
 });
+
+// Réservation Les menus
+const divForm = document.querySelector('.formMenu') as HTMLDivElement;
+
+const btnAjouterMenu = document.querySelector('.ajouterMenu') as HTMLButtonElement;
+btnAjouterMenu.addEventListener('click', ajouterMenu);
+
+const menus = document.querySelector('.menus') as HTMLDivElement;
+menus.style.display = 'flex';
+menus.style.flexDirection = 'row';
+menus.style.flexWrap = 'Wrap';
+
+let tabMenus : any = [];
+
+class Menus 
+{
+    constructor(
+        public img: string,
+        public nom: string,
+        public prix: number,
+        public description: string,
+    ) {}
+}
+
+const menu1 = new Menus('../ressources/menu/busext.jpg', 'Diner', 120, 'Menu en 6 étapes: Amuse bouche, entrée, poisson<br>viande, fromage, dessert');
+const menu2 = new Menus('../ressources/menu/busint.jpg', 'Diner avec boisson', 150, 'Menu en 6 étapes et son accord mets et vins<br>1 coupe de champagne, 2 verres de vin, eau, café/thé.');
+const menu3 = new Menus('../ressources/menu/plat.jpg', 'Diner enfant', 50, 'Menu en 3 étapes avec une boisson.<br>Pour les moins de 12 ans');
+
+tabMenus.push(menu1);
+tabMenus.push(menu2);
+tabMenus.push(menu3);
+
+for(let i = 0 ; i < tabMenus.length ; i++)
+{
+    const carte = document.createElement('div') as HTMLDivElement;
+    carte.style.border = '1px solid white';
+    carte.style.padding = '10px';
+    carte.style.display = 'flex';
+    carte.style.flexDirection = 'column';
+    carte.style.justifyContent = 'center';
+    carte.style.alignItems = 'center';
+    carte.style.margin = '5px';
+    menus.appendChild(carte);
+
+    const imgMenu = document.createElement('img') as HTMLImageElement;
+    imgMenu.setAttribute('src', `${tabMenus[i]['img']}`);
+    imgMenu.setAttribute('alt', `${tabMenus[i]['nom']}`);
+    imgMenu.style.width = '400px';
+    imgMenu.style.borderRadius = '5px';
+    carte.appendChild(imgMenu);
+
+    const intitule = document.createElement('p') as HTMLParagraphElement;
+    intitule.innerHTML = `${tabMenus[i]['nom']} - ${tabMenus[i]['prix']} €`;
+    intitule.style.margin = '10px 0';
+    carte.appendChild(intitule);
+
+    const description = document.createElement('p') as HTMLParagraphElement;
+    description.innerHTML = tabMenus[i]['description'];
+    description.style.textAlign = 'center';
+    description.style.color = 'grey';
+    description.style.width = '90%';
+    description.style.fontSize = '0.92em';
+    carte.appendChild(description);
+
+    const addOrDel = document.createElement('div') as HTMLDivElement;
+    addOrDel.style.width = '100%';
+    addOrDel.style.marginTop = '10px';
+    addOrDel.style.padding = '10px';
+    addOrDel.style.borderTop = '1px solid white';
+    carte.appendChild(addOrDel);
+    
+    const formMenu = document.createElement('form') as HTMLFormElement;
+    formMenu.style.width = '100%';
+    formMenu.style.height = '100%';
+    formMenu.style.display = 'flex';
+    formMenu.style.flexDirection = 'row';
+    formMenu.style.justifyContent = 'center';
+    formMenu.style.alignItems = 'center';
+    addOrDel.appendChild(formMenu);
+
+    const btnMoins = document.createElement('button') as HTMLButtonElement;
+    btnMoins.innerHTML = '-';
+    btnMoins.style.background = 'transparent';
+    btnMoins.style.color = 'white';
+    btnMoins.style.fontSize = '2rem';
+    btnMoins.style.fontWeight = 'bold';
+    btnMoins.style.border = 'none';
+    btnMoins.addEventListener('click', delMenu);
+    formMenu.appendChild(btnMoins);
+
+    const quantite = document.createElement('input') as HTMLInputElement;
+    quantite.style.width = '30px';
+    quantite.style.height = '30px';
+    quantite.style.textAlign = 'center';
+    quantite.style.background = 'transparent';
+    quantite.style.color = 'white';
+    quantite.style.fontSize = '1.8rem';
+    quantite.style.fontWeight = 'bold';
+    quantite.style.border = 'none';
+    quantite.style.margin = '0 10px';
+    quantite.value = '0';
+    quantite.setAttribute('class', 'quantite');
+    formMenu.appendChild(quantite);
+
+    const btnPlus = document.createElement('button') as HTMLButtonElement;
+    btnPlus.innerHTML = '+';
+    btnPlus.style.background = 'transparent';
+    btnPlus.style.color = 'white';
+    btnPlus.style.fontSize = '2rem';
+    btnPlus.style.fontWeight = 'bold';
+    btnPlus.style.border = 'none';
+    btnPlus.addEventListener('click', addMenu);
+    formMenu.appendChild(btnPlus);
+ 
+    function addMenu(e : MouseEvent)
+    {
+        e.preventDefault();
+        let qte = parseInt(quantite.value);
+        qte++;
+        quantite.value = qte.toString();
+    }
+
+    function delMenu(e : MouseEvent)
+    {
+        e.preventDefault();
+        let qte = parseInt(quantite.value);
+        qte--;
+        if(qte < 0)
+        {
+            qte = 0;
+        }
+
+        quantite.value = qte.toString();
+    }
+
+}
+
+function formulaireAddMenu()
+{
+    const divAddMenu = document.createElement('div') as HTMLDivElement;
+    divAddMenu.setAttribute('class', 'divMenu');
+    divForm.appendChild(divAddMenu);
+    
+    const formAddMenu = document.createElement('form') as HTMLFormElement;
+    formAddMenu.setAttribute('method', 'POST');
+    formAddMenu.setAttribute('action', '../controleurs/addMenu.php');
+    formAddMenu.setAttribute('enctype', 'multipart/form-data');
+    divAddMenu.appendChild(formAddMenu);
+
+    class AddMenu
+    {
+        public id: string = '';
+        public txtLabel: string = '';
+        public elementInput: string = '';
+        public form: any;
+        public type: string = '';
+
+        constructor() {}
+        
+        createLabelAndInput(id = this.id, txtLabel = this.txtLabel, elementInput = this.elementInput, form = this.form, type = this.type)
+        {
+            const label = document.createElement('label') as HTMLLabelElement;
+            label.setAttribute('for', id);
+            label.innerHTML = txtLabel;
+            form.appendChild(label);
+
+            const input = document.createElement(elementInput) as HTMLElement;
+            if(elementInput === 'input')
+            {
+                input.setAttribute('type', type);
+            }
+            input.setAttribute('id', id);
+            input.setAttribute('name', id);
+            form.appendChild(input);
+        }
+    }
+
+    const inputNom = new AddMenu().createLabelAndInput('nom', 'Nom du menu', 'input', formAddMenu, 'text');
+    const inputPrix = new AddMenu().createLabelAndInput('prix', 'Prix', 'input', formAddMenu, 'text');
+    const inputDesc = new AddMenu().createLabelAndInput('description', 'Description', 'textarea', formAddMenu, '');
+    const inputImage = new AddMenu().createLabelAndInput('image', 'Image', 'input', formAddMenu, 'file');
+
+    inputNom;
+    inputPrix;
+    inputDesc;
+    inputImage;
+
+    const btnAddMenu = document.createElement('button');
+    btnAddMenu.setAttribute('class', 'btnAddMenu');
+    btnAddMenu.innerHTML = 'Ajouter';
+    btnAddMenu.style.margin = '10px 0';
+    btnAddMenu.style.width = '90%';
+    btnAddMenu.style.height = '50px';
+    btnAddMenu.style.background = 'blue';
+    btnAddMenu.style.color = 'white';
+    formAddMenu.appendChild(btnAddMenu);
+
+}
+
+formulaireAddMenu();
+
+function ajouterMenu(e : MouseEvent)
+{
+    e.preventDefault();
+    divForm.classList.toggle('active');
+    slide.style.overflowY = 'scroll';
+    
+}
+

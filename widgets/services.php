@@ -35,7 +35,7 @@
         <tr>
             <td>19:45</td>
             <td class="middle">Arc de Triomphe</td>
-            <td><a href="">Choisir</a></td>
+            <td><a href="reservation-menus.php">Choisir</a></td>
         </tr>
         <tr>
             <td>19:45</td>
