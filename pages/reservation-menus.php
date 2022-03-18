@@ -1,4 +1,4 @@
-<?php  $nomDeLaPage = basename(__FILE__); include_once('../widgets/doctypeHead.php'); ?>
+<?php $nomDeLaPage = basename(__FILE__); include_once('../widgets/doctypeHead.php'); ?>
 
     <div class="container">
         <?php include_once('../widgets/sideBar.php'); ?>
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <?php include_once('../widgets/footer.php'); ?>
+        <?php echo '<p>'.$nom.' '.$desc.' '.$prix.' '.$imgName.' '.$imgType.'</p>'; include_once('../widgets/footer.php'); ?>
     </div>
 
 <?php include_once('../widgets/scripts.php'); ?>

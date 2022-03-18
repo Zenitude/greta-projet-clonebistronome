@@ -14,7 +14,7 @@
                 <div class="contenuOnglet">
                     <h2>Réservez une table </h2>
                     <div id="datepicker"></div>
-                    <?php include_once('services.php') ?>
+                    <?php include_once('../widgets/services.php') ?>
                 </div>
             </div>
         </div>
