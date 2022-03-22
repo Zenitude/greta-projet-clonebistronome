@@ -1,6 +1,7 @@
-.sidebar
+.slider
 {
-    width: 500px;
+    overflow-y: scroll;
+    background-attachment: fixed;
 }
 
 .reservation
@@ -99,6 +100,7 @@ i
 {
     border: 1px solid var(--secondColor);
     width: 300px;
+    height: 400px;
     text-align: center;
     display: none;
     margin: 10px auto;
@@ -144,3 +146,119 @@ i
     font-weight: bold;
 }
 
+.menus
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.carte
+{
+    border: 1px solid white;
+    width: 300px;
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgMenu
+{
+    width: 280px;
+    height: 180px;
+    border-radius: 5px;
+}
+
+.intitule
+{
+    margin: 10px 0;
+}
+
+.description
+{
+    text-align: center;
+    color: grey;
+    width: 90%;
+    font-size: 0.92em;
+}
+
+
+
+@media screen and (max-width: 1450px)
+{
+    .reservation
+    {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1230px)
+{
+    .reservation
+    {
+        width: 75%;
+
+    }
+}
+
+@media screen and (max-width: 1200px)
+{
+    .reservation
+    {
+        width: 625px;
+
+    }
+}
+
+@media screen and (max-width: 1170px)
+{
+    .reservation
+    {
+        width: 450px;
+
+    }
+}
+
+@media screen and (max-width: 1020px)
+{
+    .reservation
+    {
+        width: 400px;
+
+    }
+}
+
+@media screen and (max-width: 940px)
+{
+
+    .reservation
+    {
+        top: 5px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .slider
+    {
+        background: var(--darktheme);
+    }
+}
+
+@media screen and (max-width: 390px)
+{
+    .reservation
+    {
+        width: 500px;
+    }
+
+    .contenuOnglet
+    {
+        padding: 2px;
+    }
+}

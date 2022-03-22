@@ -1,0 +1,7 @@
+En développement par programmation orientée objet, MVC (Model-View-Controller, ou modèle-vue-contrôleur) est le nom d'une méthodologie ou d'un motif de conception visant à faire le lien entre l'interface utilisateur et les modèles de données sous-jacents. Le motif MVC est largement répandu en développement de programmes, notamment avec les langages Java, Smalltalk, C et C++.
+
+Le motif MVC se compose de trois modules ou objets principaux à utiliser dans le développement de logiciels :
+
+Un modèle représentant la structure logique sous-jacente des données dans une application logicielle, ainsi que la classe supérieure qui y est associée. Ce modèle d'objet ne contient aucune information sur l'interface utilisateur.
+Une vue, autrement dit un ensemble de classes représentant les éléments de l'interface utilisateur (tous ceux que l'utilisateur voit à l'écran et avec lesquels il peut interagir : boutons, boîtes de dialogue, etc.).
+Un contrôleur représentant les classes qui se connectent au modèle et à la vue, et servant à la communication entre les classes dans le modèle et la vue.

@@ -25,10 +25,14 @@
                     </div>
 
                     <div class="menus">
-                    
+                    <?php
+                    include_once('../controleurs/listMenu.php');
+                    ?>
                     </div>
                     
-                    <a href="reservation-date-heure.php" class="btnRetour">Retour</a> <a href="reservation-options.php" class="btnContinuer">Continuer</a>
+                    <div class="grp-btns">
+                        <a href="reservation-date-heure.php" class="btnRetour">Retour</a> <a href="reservation-options.php" class="btnContinuer">Continuer</a>
+                    </div>
                         
                 </div>
             </div>

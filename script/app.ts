@@ -155,62 +155,11 @@ const btnAjouterMenu = document.querySelector('.ajouterMenu') as HTMLButtonEleme
 btnAjouterMenu.addEventListener('click', ajouterMenu);
 
 const menus = document.querySelector('.menus') as HTMLDivElement;
-menus.style.display = 'flex';
-menus.style.flexDirection = 'row';
-menus.style.flexWrap = 'Wrap';
 
-let tabMenus : any = [];
+const cartes = document.querySelectorAll('.carte');
 
-class Menus 
+cartes.forEach(carte => 
 {
-    constructor(
-        public img: string,
-        public nom: string,
-        public prix: number,
-        public description: string,
-    ) {}
-}
-
-const menu1 = new Menus('../ressources/menu/busext.jpg', 'Diner', 120, 'Menu en 6 étapes: Amuse bouche, entrée, poisson<br>viande, fromage, dessert');
-const menu2 = new Menus('../ressources/menu/busint.jpg', 'Diner avec boisson', 150, 'Menu en 6 étapes et son accord mets et vins<br>1 coupe de champagne, 2 verres de vin, eau, café/thé.');
-const menu3 = new Menus('../ressources/menu/plat.jpg', 'Diner enfant', 50, 'Menu en 3 étapes avec une boisson.<br>Pour les moins de 12 ans');
-
-tabMenus.push(menu1);
-tabMenus.push(menu2);
-tabMenus.push(menu3);
-
-for(let i = 0 ; i < tabMenus.length ; i++)
-{
-    const carte = document.createElement('div') as HTMLDivElement;
-    carte.style.border = '1px solid white';
-    carte.style.padding = '10px';
-    carte.style.display = 'flex';
-    carte.style.flexDirection = 'column';
-    carte.style.justifyContent = 'center';
-    carte.style.alignItems = 'center';
-    carte.style.margin = '5px';
-    menus.appendChild(carte);
-
-    const imgMenu = document.createElement('img') as HTMLImageElement;
-    imgMenu.setAttribute('src', `${tabMenus[i]['img']}`);
-    imgMenu.setAttribute('alt', `${tabMenus[i]['nom']}`);
-    imgMenu.style.width = '400px';
-    imgMenu.style.borderRadius = '5px';
-    carte.appendChild(imgMenu);
-
-    const intitule = document.createElement('p') as HTMLParagraphElement;
-    intitule.innerHTML = `${tabMenus[i]['nom']} - ${tabMenus[i]['prix']} €`;
-    intitule.style.margin = '10px 0';
-    carte.appendChild(intitule);
-
-    const description = document.createElement('p') as HTMLParagraphElement;
-    description.innerHTML = tabMenus[i]['description'];
-    description.style.textAlign = 'center';
-    description.style.color = 'grey';
-    description.style.width = '90%';
-    description.style.fontSize = '0.92em';
-    carte.appendChild(description);
-
     const addOrDel = document.createElement('div') as HTMLDivElement;
     addOrDel.style.width = '100%';
     addOrDel.style.marginTop = '10px';
@@ -260,7 +209,7 @@ for(let i = 0 ; i < tabMenus.length ; i++)
     btnPlus.style.border = 'none';
     btnPlus.addEventListener('click', addMenu);
     formMenu.appendChild(btnPlus);
- 
+
     function addMenu(e : MouseEvent)
     {
         e.preventDefault();
@@ -282,7 +231,8 @@ for(let i = 0 ; i < tabMenus.length ; i++)
         quantite.value = qte.toString();
     }
 
-}
+})
+
 
 function formulaireAddMenu()
 {

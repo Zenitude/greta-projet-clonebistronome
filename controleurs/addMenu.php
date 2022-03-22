@@ -7,7 +7,7 @@
         $nom = $_POST['nom'];
         $desc = $_POST['description'];
         $prix = $_POST['prix'];
-        $imgName = $_FILES['image']['name'];
+        $imgNom = $_FILES['image']['name'];
         $imgType = $_FILES['image']['type'];
         $imgBlob = file_get_contents($_FILES['image']['tmp_name']);
         $queryAdd = $bddBustronome->prepare('INSERT INTO menus(nom, prix, description, imgNom, imgType, imgBlob)VALUES(?, ?, ?, ?, ?, ?)');
@@ -15,7 +15,7 @@
             $nom, 
             $prix, 
             $desc, 
-            $imgName, 
+            $imgNom, 
             $imgType, 
             $imgBlob
         )) or die(print_r($bddBustronome->errorInfo()));
