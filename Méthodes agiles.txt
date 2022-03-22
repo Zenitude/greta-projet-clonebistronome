@@ -1,0 +1,18 @@
+Les méthodes agiles, c’est quoi ?
+Les premières méthodes agiles sont apparues sous cette terminologie en 2000, mais existent en réalité depuis les années 1980. Plusieurs ouvrages fondamentaux ont été publiés à ce sujet. Ces publications régulières présentent des modifications adaptées aux nouvelles technologies, à l’évolution du marché, etc. Aujourd’hui, les sociétés de développement web et informatique sont confrontées à une concurrence rude, une forte instabilité des demandes, et surtout, une pression constante pour atteindre des délais de livraison toujours plus courts.
+
+« L’agilité est la capacité à produire des produits ou services en procurant régulièrement de la valeur, tout en répondant aux changements dans un environnement incertain et turbulent. »
+
+CLAUDE AUBRY, SPÉCIALISTE DE L’AGILITÉ ET DE LA MÉTHODE SCRUM
+Les méthodes agiles renvoient donc à une nouvelle manière de développer des projets, produits ou services, qualifiées d’itératives, encourageant l’adaptation au changement. Bien que les méthodes agiles ont évolué au fil du temps, elles reposent toujours sur quatre valeurs fondamentales. Elles figurent dans le Manifeste Agile écrit en 2001 par les promoteurs américains des méthodes agiles : 
+
+Individus et interactions prévalent sur les processus et les outils.
+Un logiciel qui marche a plus de valeur qu’une documentation complète
+La collaboration avec le client prévaut sur ce qui a été négocié contractuellement.
+Répondre aux changements plutôt que de suivre le plan.
+
+Les principaux objectifs des méthodes agiles sont les suivants :
+
+Minimiser les défauts de la solution finale
+Améliorer la cohésion de l’équipe de développement
+Obtenir un système le plus flexible et adaptable possible
