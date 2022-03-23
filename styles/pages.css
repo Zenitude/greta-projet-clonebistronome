@@ -41,13 +41,14 @@
 .navBar li:not(.navBar li:first-of-type) a::before
 {
     content: '';
-    width: 0%;
+    width: 1px;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     background-color: var(--hovercolor);
     z-index: -1;
+    transition: transform 0.5s ease-in;
 }
 
 .navBar li:first-of-type
@@ -62,7 +63,8 @@
 
 .navBar li:hover a::before
 {
-    animation: overlay 0.5s linear forwards;
+    /* animation: overlay 0.5s linear forwards; */
+    transform: scaleX(700);
 }
 
 .navBar li:first-of-type:hover a
@@ -70,17 +72,19 @@
     color:#000;
 }
 
-@keyframes overlay
+/* @keyframes overlay
 {
     form
     {
         width: 0%;
+        transform: scaleX(0)
     }
     to
     {
         width: 100%;
+        transform: scaleX(100);
     }
-}
+} */
 
 .fa-star-half-stroke
 {
